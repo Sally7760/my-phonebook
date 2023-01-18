@@ -1,24 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
+import { Button, Input } from 'antd';
+import { useState } from 'react';
 import './App.css';
+import {Stack} from './Structures';
 
 function App() {
+  const [input,setInput] = useState<any>()
+  const s = new Stack();
+  
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+        <Input onChange={(event)=>setInput(event.target.value)} style={{
+          width:'150px',
+          marginTop:'10px'
+        }}/>
+        <Button onClick={()=>{s.push(input);console.log(s.isEmpty())}} type='primary'>push</Button>
+        <Button onClick={()=>{console.log(s)}} danger>pop</Button>
     </div>
   );
 }
