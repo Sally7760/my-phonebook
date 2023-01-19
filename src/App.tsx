@@ -14,7 +14,7 @@ function App() {
           marginTop:'10px'
         }}/>
         <Button onClick={()=>{s.push(input);console.log(s.isEmpty())}} type='primary'>push</Button>
-        <Button onClick={()=>{console.log(s)}} danger>pop</Button>
+        <Button onClick={()=>{console.log(s.whole())}} danger>pop</Button>
     </div>
   );
 }

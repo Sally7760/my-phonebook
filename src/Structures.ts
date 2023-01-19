@@ -12,12 +12,15 @@ export class Stack<T> {
   }
 
   peek(): T {
-    if (this.isEmpty()) console.log('empty');
+    if (this.isEmpty()) alert('empty');
 
     return this.array[this.array.length - 1];
   }
 
   isEmpty(): boolean {
     return this.array.length === 0;
+  }
+  whole():T[]{
+    return this.array
   }
 }
